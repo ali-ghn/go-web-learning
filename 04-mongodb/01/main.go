@@ -1,26 +1,18 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/ali-ghn/go-web-learning/04-mongodb/01/controllers"
-
 	"github.com/julienschmidt/httprouter"
-	"gopkg.in/mgo.v2"
 )
 
 func main() {
 	r := httprouter.New()
-	uc := controllers.UserController.NewUserController(getSession())
-	r.GET("/", index)
-	r.POST("/user", uc.CreateUser)
+	uc := controllers.NewUserController(getSession())
 	r.GET("/user", uc.GetUser)
+	r.POST("/user", uc.CreateUser)
 	http.ListenAndServe(":8081", r)
-}
-
-func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	fmt.Fprintln(w, "welcome\n")
 }
 
 func getSession() *mgo.Session {
