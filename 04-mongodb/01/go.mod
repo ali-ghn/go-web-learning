@@ -1,4 +1,4 @@
-module github.com/ali-ghn/go-web-learning/mongodb/011
+module github.com/ali-ghn/go-web-learning/mongodb/01
 
 go 1.17
 

@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/ali-ghn/go-web-learning/04-mongodb/controllers"
+	"github.com/ali-ghn/go-web-learning/04-mongodb/01/controllers"
+
 	"github.com/julienschmidt/httprouter"
 	"gopkg.in/mgo.v2"
 )
